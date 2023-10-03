@@ -19,6 +19,7 @@ export class JokeComponent {
   toggle() {
   this.hide = !this.hide;
   //Prueba Git
+  //Segunda Prueba de Git
   }
 
 
