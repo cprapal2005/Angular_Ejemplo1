@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { JokeComponent } from '../joke/joke.component'; 
+import { Joke } from '../../clases/joke';
 
 @Component({
   selector: 'app-joke-list',
@@ -9,13 +9,13 @@ import { JokeComponent } from '../joke/joke.component';
 })
 export class JokeListComponent {
 
-  jokes: JokeComponent[];
+  jokes: Joke[];
 
   constructor() {
 
     this.jokes = [
-      new JokeComponent("¿Cual es el primo de Pocoyo?", "MuchoTu"),
-      new JokeComponent("¿Cual es el nombre corto de Programacion Multimedia?", "Pomodoro")
+      new Joke("¿Cual es el primo de Pocoyo?", "MuchoTu"),
+      new Joke("¿Cual es el nombre corto de Programacion Multimedia?", "Pomodoro")
     ];
 
   }
