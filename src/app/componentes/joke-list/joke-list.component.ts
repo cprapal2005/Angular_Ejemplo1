@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Joke } from '../../clases/joke';
 
 @Component({
-  selector: 'app-joke-list',
+  selector: 'joke-list',
   templateUrl: './joke-list.component.html',
   styles: [
   ]
@@ -19,5 +19,10 @@ export class JokeListComponent {
     ];
 
   }
+
+  anadirBroma(joke: Joke) {
+    this.jokes.unshift(joke);
+    }
+  
 
 }

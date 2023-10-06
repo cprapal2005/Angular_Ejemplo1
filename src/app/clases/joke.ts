@@ -12,7 +12,7 @@ export class Joke {
 
     }
 
-    toggle() {
+    revertir() {
 
         this.esconder = !this.esconder;
         
