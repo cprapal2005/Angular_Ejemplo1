@@ -1,8 +1,8 @@
-<div class="card card-block">
+<div class="card card-block w-75 p-3 mx-auto mt-3">
 
-  <h4 class="card-title">Crear Broma</h4>
+  <h4 class="card-title">Introducir Broma</h4>
 
-  <div class="form-group">
+  <div class="form-group mt-2">
 
     <input type="text"
     class="form-control"
@@ -10,15 +10,15 @@
     #pregunta>
   </div>
   
-  <div class="form-group">
+  <div class="form-group mt-2">
     <input type="text"
     class="form-control"
     placeholder="Introduce la respuesta"
     #respuesta>
 
   </div>
-
-  <button type="button" class="btn btn-primary" (click)="createJoke(pregunta.value, respuesta.value)">Introducir</button>
+  
+  <button class="btn btn-primary mt-2" (click)="crearBroma(pregunta.value, respuesta.value)">Introducir</button>
 
 </div>
   

@@ -1,17 +1,10 @@
-<div class="card">
+<div class="card-body w-auto">
 
-  <div class="card-header">
+  <h5 class="card-title">{{broma.pregunta}}</h5>
+  <p class="card-text" [hidden]="broma.esconder">{{broma.respuesta}}</p>
+  <button class="btn btn-primary" (click)="broma.revertir()">Haber gracioso como seria</button>
+  <button class="btn btn-primary ms-3" (click)="borrarBroma(broma.pregunta, broma.respuesta)">Borrar</button>
+  <button class="btn btn-primary ms-3" (click)="revertir()">Editar</button>
+  <joke-form *ngIf="esconder" (bromaCreada)="editarBroma($event)"></joke-form>
 
-      Bromas
-
-  </div>
-
-  <div class="card-body">
-
-      <h5 class="card-title">{{broma.pregunta}}</h5>
-      <p class="card-text" [hidden]="broma.esconder">{{broma.respuesta}}</p>
-      <a href="#" class="btn btn-primary" (click)="broma.revertir()">Haber gracioso como seria</a>
-
-  </div>
-  
 </div>

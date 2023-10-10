@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Joke } from '../../clases/joke';
+import { JokeService } from 'src/app/servicio/joke-service';
 
 @Component({
   selector: 'joke-list',
@@ -9,20 +9,12 @@ import { Joke } from '../../clases/joke';
 })
 export class JokeListComponent {
 
-  jokes: Joke[];
+  jokeService: JokeService;
 
   constructor() {
 
-    this.jokes = [
-      new Joke("¿Cual es el primo de Pocoyo?", "MuchoTu"),
-      new Joke("¿Cual es el nombre corto de Programacion Multimedia?", "Pomodoro")
-    ];
+    this.jokeService = new JokeService();
 
   }
-
-  anadirBroma(joke: Joke) {
-    this.jokes.unshift(joke);
-    }
-  
 
 }

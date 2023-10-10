@@ -1,3 +1,11 @@
-<joke-form (bromaCreada)="anadirBroma($event)"></joke-form>
-<joke *ngFor="let j of jokes" [joke]="j"></joke>
+<joke-form (bromaCreada)="jokeService.anadirBroma($event)"></joke-form>
+
+<div class="card w-75 p-3 mt-3 mx-auto">
+
+    <h4 class="card-title">Bromas</h4>
+
+    <joke *ngFor="let j of jokeService.jokes" [joke]="j" (bromaBorrada)="jokeService.eliminarBroma($event)"></joke>
+
+</div>
+
 

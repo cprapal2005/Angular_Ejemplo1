@@ -11,7 +11,7 @@ export class JokeFormComponent {
 
   @Output() bromaCreada = new EventEmitter<Joke>();
 
-  createJoke(pregunta: string, respuesta: string) {
+  crearBroma(pregunta: string, respuesta: string) {
 
     this.bromaCreada.emit(new Joke(pregunta, respuesta));
 
