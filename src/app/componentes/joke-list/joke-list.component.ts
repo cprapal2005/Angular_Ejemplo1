@@ -9,11 +9,7 @@ import { JokeService } from 'src/app/servicio/joke-service';
 })
 export class JokeListComponent {
 
-  jokeService: JokeService;
-
-  constructor() {
-
-    this.jokeService = new JokeService();
+  constructor(public jokeService: JokeService) {
 
   }
 
