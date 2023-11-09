@@ -2,23 +2,39 @@
 
   <h4 class="card-title">Introducir Broma</h4>
 
-  <div class="form-group mt-2">
+  <form [formGroup]="jokeForm" (ngSubmit)="onSubmit()">
 
-    <input type="text"
-    class="form-control"
-    placeholder="Introduzca la pregunta"
-    #pregunta>
-  </div>
-  
-  <div class="form-group mt-2">
-    <input type="text"
-    class="form-control"
-    placeholder="Introduce la respuesta"
-    #respuesta>
+    <div class="form-group mt-2">
 
-  </div>
+      <input type="text" class="form-control" placeholder="Introduzca la pregunta"
+
+      formControlName="pregunta"
+
+      [ngClass]="{ 'is-invalid': jokeForm.get('pregunta')!.invalid && jokeForm.get('pregunta')?.touched }">
+
+      <div *ngIf="jokeForm.get('pregunta')!.invalid && jokeForm.get('pregunta')!.touched" class="invalid-feedback">
+        Pregunta es requerida
+      </div>
+
+    </div>
+    
+    <div class="form-group mt-2">
+
+      <input type="text" class="form-control" placeholder="Introduce la respuesta"
+
+      formControlName="respuesta"
+
+      [ngClass]="{ 'is-invalid': jokeForm.get('respuesta')!.invalid && jokeForm.get('respuesta')?.touched }">
+      
+      <div *ngIf="jokeForm.get('respuesta')!.invalid && jokeForm.get('respuesta')!.touched" class="invalid-feedback">
+        Respuesta es requerida
+      </div>
+      
+    </div>
+    
+    <button class="btn btn-primary mt-2" type="submit" [disabled]="!jokeForm.valid">Introducir</button>
   
-  <button class="btn btn-primary mt-2" (click)="crearBroma(pregunta.value, respuesta.value)">Introducir</button>
+  </form>
 
 </div>
   
